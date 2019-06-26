@@ -50,8 +50,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string| |
-|user_id|references| foreign_key:true|
-|group_id|references| foreign_key: true|
+|user_id|references| null:false,foreign_key:true|
+|group_id|references| null:false,foreign_key: true|
 |content|text| |
 
 ### Association
@@ -63,8 +63,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references| foreign_key: true|
-|group_id|references| foreign_key: true|
+|user_id|references| null:false,foreign_key: true|
+|group_id|references| null:false,foreign_key: true|
 
 ### Association
 - belongs_to :user
