@@ -27,29 +27,31 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
+|name|string|null: false, index,uniq: true|
 
 ### Association
 - has_many :messases
-- has_many :groups, through: :gurops_users
+- has_many : groups_users
+- has_many :groups, through: :groups_users
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :messases
-- has_many :users, through: :gurops_users
+- has_many : groups_users 
+- has_many :users, through: :groups_users
 
 ## messasesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|image|text| foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|image|string| foreign_key: true|
+|user_id|integer|null: false: true|
+|group_id|integer|null: false: true|
 |content|text|foreign_key: true|
 
 ### Association
