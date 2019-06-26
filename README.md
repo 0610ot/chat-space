@@ -28,10 +28,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|@email|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
 - has_many :messases
 - has_many :groups, through: :gurops_users
 
@@ -42,7 +40,6 @@ Things you may want to cover:
 |name|string|null: false, index: true|
 
 ### Association
-- belongs_to :user
 - has_many :messases
 - has_many :users, through: :gurops_users
 
@@ -50,21 +47,22 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|photop|text|null: false, foreign_key: true|
-|user_id|integer|null: false, class_name: true|
-|group_id|integer|null: false, class_name: true|
-|text|text|null: false, foreign_key: true|
+|image|text| foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|content|text|foreign_key: true|
 
 ### Association
 - belongs_to :user
-- has_many :messases
+- has_many :groups
 
 
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, source: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
