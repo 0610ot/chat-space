@@ -33,7 +33,7 @@ Things you may want to cover:
 ### Association
 - has_many :groups
 - has_many :messases
-- belongs_to :groups_users
+- has_many :groups, through: :gurops_users
 
 ## groupsテーブル
 
@@ -44,7 +44,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :messases
-
+- has_many :users, through: :gurops_users
 
 ## messasesテーブル
 
@@ -68,4 +68,4 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :user
+- belongs_to :group
