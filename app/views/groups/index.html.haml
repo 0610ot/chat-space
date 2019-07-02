@@ -1,25 +1,6 @@
 .wrapper
   .chat-side
-    .side-header
-      .side-header__box
-        aaa
-        .side-header__box__user
-        .side-header__box__menu
-          .side-header__box__menu__new-group
-            = fa_icon 'edit' 
-          .side-header__box__menu__edit-user
-            = fa_icon 'cog'
-
-
-    .groups
-      .group
-        .group__name
-          ねむい
-        .group__message
-          kkkk
-      
-
-
+    = render "messages/chat-side"
   .chat-main
     .main-header
       .main-header__left-box
