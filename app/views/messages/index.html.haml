@@ -1,0 +1,27 @@
+.wrapper
+  = render "groups/chat-side"
+  .chat-side
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__group
+          ggg
+        .main-header__left-box__member
+          member
+      .main-header__right-box
+        = link_to "Edit", edit_group_path(@group.id), class: "main-header__right-box__color"
+
+    .messages
+      = render @messages
+
+
+    .form
+      .form__main 
+        .form__main__box
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, class: 'form__main__box__font', placeholder: 'type a message'
+            = f.label :image, class: 'form__main__box__image' do
+              = fa_icon 'image'
+              = f.file_field :image, class: 'form__main__box__image'
+            = f.submit 'Send', class: 'form__main__box__send'
+

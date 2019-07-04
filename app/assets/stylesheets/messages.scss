@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+* {
+  text-decoration: none;
+}
 .wrapper{
   color: #000;
     background: #FFF;
@@ -25,12 +28,16 @@
           width: 100%;
           font-weight: bold;
           &__menu {
+            
           display: flex;
             &__new-group{
               margin-left: 0.3rem;
             }
             &__edit-user{
               margin-left: 0.3rem;
+        }
+        .icon{
+          color:#fff;
         }
       }
     }
@@ -44,10 +51,12 @@
       margin-bottom: 40px;
       
       &__name{
+        color:#fff;
         font-size: 15px;
         margin-bottom: 5px;
       }
       &__message{
+        color:#fff;
         font-size: 11px;
       }
     }
@@ -88,7 +97,9 @@
           border: solid 1px #38aef0;
           position: absolute;
           right: 40px;
+        &__color{
           color: #38aef0;
+        }
       }
     } 
   }
@@ -102,6 +113,7 @@
 
     .message{
       padding-bottom: 40px;
+
       &__top{
         display: flex;
         margin-bottom: 10px;
@@ -116,7 +128,10 @@
           color: #999999;
           margin-left: 10px;
           }
-       }
+          
+        }
+
+
       &__text{
         color: #434a54;
         font-size: 14px;
@@ -128,29 +143,35 @@
 
 
 
-  .forms{
+  .form{
     height:90px;
     background-color: #ddd;
     padding: 20px 40px;
 
-    .form{
-      display: flex;
+    &__main{
+      position: relative;
+      
+
+
       &__box{
         position: relative;
-        width: 100%;
-        background-color:#fff;
+        width:100%;
+        
+
         &__font{
+          width: calc(100% - 115px);
           height: 50px;
-          width: 100%;
-          padding: 10px 40px 0 10px;
+          padding: 0px 40px 0px 10px;
           color: #434a54;
           border-style: none;
+          float: left;
         } 
         &__image{
           font-size: 1.3rem;
           position: absolute;
           top: 10px;
-          right: 10px;
+          right: 130px;
+          float: left;
           #message_image{
             display: none;
           }
@@ -163,14 +184,9 @@
         background-color: #38aef0;
         color: white;
         cursor: pointer;
-        
-        &__text{
-          width: 50px;
-          height: 20px;
-          margin: 0 auto;
-          line-height: 50px;
-          }
-         }
-       }
-     }
-   }
+        margin: 0 auto;
+        float: right;
+      }
+    }
+  }
+}
