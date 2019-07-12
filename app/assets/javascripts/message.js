@@ -42,6 +42,6 @@ $(document).on('turbolinks:load', function(){
     })
     .always(function(data){
       $('.form__main__box__send').prop('disabled', false);
-  })
+    })
   })
 });
