@@ -3,7 +3,7 @@
   .chat-side
   .chat-main
     .main-header
-      .main-header__left-box
+      .main-header__left-box{"data-group": "#{@group.id}"}
         .main-header__left-box__group
           = @group.name
         .main-header__left-box__member

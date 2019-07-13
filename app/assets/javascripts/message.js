@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(function(){
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
@@ -44,4 +44,31 @@ $(document).on('turbolinks:load', function(){
       $('.form__main__box__send').prop('disabled', false);
     })
   })
+
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    var last_message_id = $('.message:last').data("id");
+    var group_id = $(".main-header__left-box").data("group");
+    var url = `/groups/${group_id}/api/messages`;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'json',
+      data: {last_id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      messages.forEach(function (message) {
+        insertHTML = buildHTML(message);
+        $('.messages').append(insertHTML);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight });
+      })
+    })
+    .fail(function() {
+      alert('自動更新に失敗しました');
+    });
+  }
+}
+  setInterval(reloadMessages, 5000);
 });
+
